@@ -84,8 +84,8 @@ module charger(x, y) {
 }
 
 module fadecandy(x, y) {
-	holes_y_spacing = 19.5;
-	holes_x_spacing = 20.5;
+	holes_y_spacing = 20.5;
+	holes_x_spacing = 19.5;
 
 	translate([x,y]) {
 		translate([-(holes_x_spacing/2), -(holes_y_spacing / 2)])
@@ -96,8 +96,8 @@ module fadecandy(x, y) {
 	        circle(1.5);
 		translate([+(holes_x_spacing/2), +(holes_y_spacing / 2)])
 	        circle(1.5);
-		translate([-10.5, 13])
-			square([21, 5], r=slot_rounding);
+		translate([13, -10.5])
+			square([5, 21], r=slot_rounding);
 	}
 }
 
@@ -130,12 +130,16 @@ difference(r=slot_rounding) {
 		powerboost(50, 14);
 
 		charger(50, 50);
-		fadecandy(14, 50);
+		fadecandy(14, 60);
 
 		powercell(20, 86);
 		powerboost_rev(50, 86);
 
 		battery(100,50);
+
+		// hole for the power switch
+		translate([100, 90])
+			circle(5);
 
 		// slots to mount onto rack or solar mounting plate
 		translate([-10, -2]) {
