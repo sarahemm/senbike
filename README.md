@@ -1,4 +1,4 @@
 senbike
 =======
 
-sen's Playa Bike Lighting
+Blinky lighting system for the bike sen uses on the playa.
